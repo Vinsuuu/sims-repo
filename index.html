@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SIMS - Student Information Management System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container-fluid app-shell">
+    <h1 class="title">Student Information Management System</h1>
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="card p-4 side-card register-card">
+          <h5 class="card-title">Register New Student</h5>
+          <form id="studentForm">
+            <div class="mb-2"><label class="form-label">Student ID</label><input required id="studentId" class="form-control" /></div>
+            <div class="mb-2"><label class="form-label">Full Name</label><input required id="fullName" class="form-control" /></div>
+            <div class="mb-2"><label class="form-label">Gender</label><select id="gender" class="form-select"><option value="">Select Gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+            <div class="mb-2"><label class="form-label">Gmail</label><input required id="gmail" type="email" class="form-control" /></div>
+            <div class="mb-2"><label class="form-label">Program</label><input id="program" class="form-control" /></div>
+            <div class="mb-2"><label class="form-label">Year Level</label><input id="yearLevel" type="number" min="1" max="6" class="form-control" /></div>
+            <div class="mb-3"><label class="form-label">University</label><input id="university" class="form-control" /></div>
+            <button class="btn btn-primary w-100" type="submit">Add Student</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card p-4 filter-card mb-4">
+          <h5 class="card-title">Search & Filter</h5>
+          <div class="input-group mb-3 search-input-group">
+            <input id="searchQuery" class="form-control" placeholder="Search ID, Name, or Program..." />
+            <button id="searchBtn" class="btn btn-primary">🔍</button>
+          </div>
+          <div class="d-flex gap-2 mb-2">
+            <select id="filterGender" class="form-select"><option value="">All Genders</option><option>Male</option><option>Female</option><option>Other</option></select>
+            <input id="filterProgram" class="form-control" placeholder="Filter Program..." />
+            <button id="clearFilter" class="btn btn-danger">Clear</button>
+          </div>
+        </div>
+
+        <div class="card p-4 student-records-card">
+          <h5 class="card-title d-flex justify-content-between align-items-center">Student Records <span id="studentCount" class="badge bg-primary">0 Records</span></h5>
+          <div class="table-responsive scrollable-table-container">
+            <table class="table table-striped align-middle">
+              <thead><tr><th>Actions</th><th>Student ID</th><th>Full Name</th><th>Gender</th><th>Program</th><th>Year</th><th>University</th></tr></thead>
+              <tbody id="studentsTbody"><tr><td colspan="7" class="text-center text-muted py-4">Loading...</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

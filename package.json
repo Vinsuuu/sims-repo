@@ -1,0 +1,13 @@
+{
+  "name": "sims_full_vscode",
+  "version": "1.0.0",
+  "description": "Student Information Management System - Render ready",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "cors": "^2.8.5"
+  }
+}
